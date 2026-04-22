@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HIỀN. - RAW PORTFOLIO</title>
+    
+    <!-- Fonts: Space Grotesk (Dày, góc cạnh) & Space Mono (Máy đánh chữ, retro) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Space Grotesk', 'sans-serif'],
+                        mono: ['Space Mono', 'monospace'],
+                    },
+                    colors: {
+                        raw: {
+                            paper: '#EAE6DF', /* Màu giấy nhám/Off-white */
+                            black: '#111111', /* Đen tuyền */
+                            orange: '#FF4500', /* Cam đỏ Brutalist (giống moodboard) */
+                        }
+                    },
+                    borderWidth: {
+                        '3': '3px',
+                        '4': '4px',
+                        '8': '8px',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Brutalist Styles */
+        body {
+            background-color: var(--tw-colors-raw-paper);
+            color: var(--tw-colors-raw-black);
+            cursor: crosshair; /* Trỏ chuột hình dấu cộng retro */
+        }
+
+        /* Solid Drop Shadows */
+        .brutal-shadow {
+            box-shadow: 8px 8px 0px var(--tw-colors-raw-black);
+            transition: all 0.15s ease-in-out;
+        }
+        .brutal-shadow:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0px var(--tw-colors-raw-black);
+        }
+
+        .brutal-shadow-orange {
+            box-shadow: 8px 8px 0px var(--tw-colors-raw-orange);
+            transition: all 0.15s ease-in-out;
+        }
+        .brutal-shadow-orange:hover {
+            transform: translate(4px, 4px);
+            box-shadow: 4px 4px 0px var(--tw-colors-raw-orange);
+        }
+
+        /* Outline Text */
+        .text-outline {
+            color: transparent;
+            -webkit-text-stroke: 2px var(--tw-colors-raw-black);
+        }
+        
+        .text-outline:hover {
+            color: var(--tw-colors-raw-orange);
+            -webkit-text-stroke: 2px var(--tw-colors-raw-orange);
+        }
+
+        /* 90s Marquee */
+        .marquee {
+            overflow: hidden;
+            white-space: nowrap;
+            background: var(--tw-colors-raw-black);
+            color: var(--tw-colors-raw-orange);
+            font-family: 'Space Mono', monospace;
+            text-transform: uppercase;
+            font-weight: bold;
+            padding: 8px 0;
+            border-bottom: 4px solid var(--tw-colors-raw-black);
+        }
+        .marquee span {
+            display: inline-block;
+            animation: scroll 20s linear infinite;
+            padding-left: 100%;
+        }
+        @keyframes scroll {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-100%, 0); }
+        }
+
+        /* Custom Selection */
+        ::selection {
+            background: var(--tw-colors-raw-orange);
+            color: #fff;
+        }
+
+        /* Noise Texture Overlay */
+        .noise-bg {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 50;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        /* Hide scrollbar for brutalist clean look */
+        ::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="font-sans antialiased overflow-x-hidden p-2 md:p-6 border-8 border-raw-black min-h-screen relative">
+
+    <!-- Noise Texture -->
+    <div class="noise-bg"></div>
+
+    <!-- MAIN CONTAINER - VISIBLE GRID -->
+    <main class="border-4 border-raw-black bg-raw-paper max-w-7xl mx-auto relative z-10">
+        
+        <!-- Marquee Bar -->
+        <div class="marquee border-b-4 border-raw-black">
+            <span>*** NGUYỄN THỤC HIỀN *** CONTENT MARKETING PORTFOLIO *** RETRO AESTHETICS *** VISUAL HONESTY *** NO BACKUP PLANS *** 2026 TRENDS *** NGUYỄN THỤC HIỀN ***</span>
+        </div>
+
+        <!-- HEADER / HERO -->
+        <header class="flex flex-col border-b-4 border-raw-black">
+            
+            <!-- Top Info Panel -->
+            <div class="p-6 md:p-12">
+                
+                <div class="flex flex-row gap-4 md:gap-8 items-start justify-between">
+                    <!-- Text Block -->
+                    <div class="flex-none">
+                        <div class="inline-block bg-raw-orange text-raw-black font-mono font-bold uppercase px-3 py-1 border-2 border-raw-black brutal-shadow mb-8">
+                            SYS.ID // TH15102004
+                        </div>
+                        
+                        <h1 class="text-5xl sm:text-6xl md:text-[6.5rem] lg:text-[5.5rem] xl:text-[7rem] font-black leading-[0.85] tracking-tighter uppercase mb-4">
+                            THỤC<br>
+                            <span class="text-raw-orange">HIỀN.</span>
+                        </h1>
+                        
+                        <!-- Chữ Content Marketing hiển thị rõ ràng, không dùng outline nữa -->
+                        <h2 class="text-xl sm:text-2xl md:text-3xl xl:text-4xl font-bold uppercase text-raw-black mt-2 tracking-tight">
+                            Content Marketing
+                        </h2>
+                    </div>
+
+                    <!-- New Professional Avatar Box nằm ngang cạnh tên -->
+                    <div class="w-32 sm:w-48 md:w-56 xl:w-64 aspect-[3/4] border-4 border-raw-black brutal-shadow shrink-0 relative overflow-hidden bg-white group mt-2">
+                        <img src="./images/ava.jpg"
+                             alt="Professional Avatar"
+                             class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-2 right-2 bg-raw-orange text-raw-black border-2 border-raw-black px-1 sm:px-2 py-0.5 font-mono text-[10px] sm:text-xs font-bold brutal-shadow hidden sm:block">
+                            AVATAR
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Data Block -->
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 gap-4 font-mono text-sm uppercase font-bold bg-white p-6 border-4 border-raw-black brutal-shadow-orange">
+                    <div class="flex flex-col gap-1">
+                        <span class="text-raw-orange">EMAIL:</span>
+                        <a href="mailto:thuchienall@gmail.com" class="hover:underline">thuchienall@gmail.com</a>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <span class="text-raw-orange">PHONE:</span>
+                        <span>0904.523.502</span>
+                    </div>
+                    <div class="flex flex-col gap-1 md:col-span-2">
+                        <span class="text-raw-orange">LOCATION:</span>
+                        <span>Bắc Từ Liêm, Hà Nội, VN</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bottom Image Panel (3-Grid Vertical Images Arranged Horizontally) -->
+            <div class="bg-raw-orange p-6 md:p-12 grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 border-t-4 border-raw-black relative overflow-hidden">
+                <!-- Cell 1 -->
+                <div class="w-full aspect-[3/4] border-4 border-raw-black brutal-shadow bg-raw-paper relative overflow-hidden group">
+                    <img src="./images/hien1.jpg"
+                         alt="Grid Image 1"
+                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <!-- Typography Overlay -->
+                    <div class="absolute bottom-4 left-4 font-mono font-bold text-2xl md:text-3xl text-raw-black mix-blend-color-burn leading-none">
+                        H1510
+                    </div>
+                </div>
+                
+                <!-- Cell 2 -->
+                <div class="w-full aspect-[3/4] border-4 border-raw-black brutal-shadow bg-raw-paper relative overflow-hidden group">
+                    <img src="./images/hien2.jpg"
+                         alt="Grid Image 2"
+                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute bottom-4 left-4 font-mono font-bold text-2xl md:text-3xl text-raw-black mix-blend-color-burn leading-none">
+                        RAW
+                    </div>
+                </div>
+
+                <!-- Cell 3 -->
+                <div class="w-full aspect-[3/4] border-4 border-raw-black brutal-shadow bg-raw-paper relative overflow-hidden group">
+                    <img src="./images/hien3.jpg"
+                         alt="Grid Image 3"
+                         class="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                    <div class="absolute bottom-4 left-4 font-mono font-bold text-2xl md:text-3xl text-raw-black mix-blend-color-burn leading-none">
+                        SYS
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- MỤC TIÊU (OBJECTIVES) -->
+        <section class="border-b-4 border-raw-black bg-raw-black text-raw-paper p-6 md:p-12">
+            <div class="flex items-center gap-4 mb-8">
+                <i data-lucide="crosshair" class="w-8 h-8 text-raw-orange"></i>
+                <h3 class="text-4xl md:text-5xl font-black uppercase tracking-tight">Mục Tiêu</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 font-mono text-base md:text-lg">
+                <div class="border-2 border-raw-orange p-6 hover:bg-raw-orange hover:text-raw-black transition-colors duration-200">
+                    <p class="mb-4">
+                        <span class="bg-raw-paper text-raw-black px-2 py-1 font-bold">01 // SÁNG TẠO</span>
+                    </p>
+                    <p class="leading-relaxed">
+                        Phát triển kỹ năng sáng tạo và sản xuất nội dung ngắn trên các nền tảng MXH (đặc biệt TikTok). Tham gia xây dựng ý tưởng, kịch bản và triển khai nội dung phù hợp với hành vi người dùng & định hướng thương hiệu.
+                    </p>
+                </div>
+                <div class="border-2 border-raw-orange p-6 hover:bg-raw-orange hover:text-raw-black transition-colors duration-200">
+                    <p class="mb-4">
+                        <span class="bg-raw-paper text-raw-black px-2 py-1 font-bold">02 // CHIẾN LƯỢC</span>
+                    </p>
+                    <p class="leading-relaxed">
+                        Trở thành chuyên viên nội dung mạng xã hội có tư duy chiến lược. Tham gia xây dựng định hướng nội dung và chiến dịch truyền thông trên nền tảng số, kết hợp sáng tạo với phân tích dữ liệu nhằm tối ưu hiệu quả.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- KINH NGHIỆM (EXPERIENCE) - TABLE LAYOUT -->
+        <section class="border-b-4 border-raw-black">
+            <div class="p-6 md:p-8 border-b-4 border-raw-black bg-white">
+                <h3 class="text-4xl md:text-5xl font-black uppercase tracking-tight">Kinh Nghiệm Làm Việc</h3>
+            </div>
+
+            <!-- ROW 1 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 border-b-4 border-raw-black hover:bg-raw-black hover:text-raw-paper transition-colors duration-200 group">
+                <div class="md:col-span-3 p-6 border-b-4 md:border-b-0 md:border-r-4 border-raw-black font-mono font-bold text-xl flex items-center bg-raw-orange text-raw-black group-hover:bg-transparent group-hover:text-raw-orange">
+                    T7.2025 - T11.2025
+                </div>
+                <div class="md:col-span-9 p-6">
+                    <h4 class="text-3xl font-bold uppercase mb-2">Thực tập sinh Ban Truyền thông</h4>
+                    <h5 class="font-mono text-lg mb-4 text-raw-orange font-bold">> Vietnam Airlines (Phòng Thương hiệu)</h5>
+                    <ul class="font-mono text-sm space-y-2 list-square pl-4 marker:text-raw-orange">
+                        <li>Hỗ trợ quản lý và theo dõi các chiến dịch truyền thông trên các kênh quảng cáo nội bộ.</li>
+                        <li>Hỗ trợ triển khai nội dung, kiểm soát thông tin trên các kênh Spirit Vietnam Airlines.</li>
+                        <li>Thu thập, tổng hợp & xử lý dữ liệu cơ bản về hiệu quả truyền thông.</li>
+                        <li>Theo dõi chỉ số phục vụ đánh giá và báo cáo chiến dịch.</li>
+                        <li>Phối hợp với các phòng ban đảm bảo tiến độ và tính nhất quán.</li>
+                    </ul>
+                    
+                    <!-- Image Gallery cho ROW 1 -->
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/3183150/pexels-photo-3183150.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 1" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">VNA_01.JPG</div>
+                        </div>
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 2" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">VNA_02.JPG</div>
+                        </div>
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/1181406/pexels-photo-1181406.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 3" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">VNA_03.JPG</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 2 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 border-b-4 border-raw-black hover:bg-raw-black hover:text-raw-paper transition-colors duration-200 group">
+                <div class="md:col-span-3 p-6 border-b-4 md:border-b-0 md:border-r-4 border-raw-black font-mono font-bold text-xl flex items-center bg-raw-paper text-raw-black group-hover:bg-transparent group-hover:text-raw-paper">
+                    T9.2023 - T3.2024
+                </div>
+                <div class="md:col-span-9 p-6">
+                    <h4 class="text-3xl font-bold uppercase mb-2">CTV Content & Truyền thông</h4>
+                    <h5 class="font-mono text-lg mb-4 text-raw-orange font-bold">> Hachieduction</h5>
+                    <ul class="font-mono text-sm space-y-2 list-square pl-4 marker:text-raw-orange">
+                        <li>Viết nội dung truyền thông cho fanpage/TikTok về tư vấn du học.</li>
+                        <li>Lên ý tưởng, xây dựng kịch bản và quay dựng video ngắn TikTok.</li>
+                        <li>Hỗ trợ tư vấn, giải đáp thắc mắc cơ bản cho học sinh/phụ huynh.</li>
+                        <li>Phối hợp team triển khai nội dung tăng mức độ tiếp cận.</li>
+                    </ul>
+
+                    <!-- Image Gallery cho ROW 2 -->
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/2564369/pexels-photo-2564369.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 1" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">TIKTOK_01</div>
+                        </div>
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/3379934/pexels-photo-3379934.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 2" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">SCRIPT_02</div>
+                        </div>
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 3" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">EDU_03</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROW 3 -->
+            <div class="grid grid-cols-1 md:grid-cols-12 hover:bg-raw-black hover:text-raw-paper transition-colors duration-200 group">
+                <div class="md:col-span-3 p-6 border-b-4 md:border-b-0 md:border-r-4 border-raw-black font-mono font-bold text-xl flex items-center bg-raw-paper text-raw-black group-hover:bg-transparent group-hover:text-raw-paper">
+                    Freelance
+                </div>
+                <div class="md:col-span-9 p-6">
+                    <h4 class="text-3xl font-bold uppercase mb-2">Freelance Truyền thông</h4>
+                    <h5 class="font-mono text-lg mb-4 text-raw-orange font-bold">> Dự án Thương hiệu thời trang</h5>
+                    <ul class="font-mono text-sm space-y-2 list-square pl-4 marker:text-raw-orange">
+                        <li>Xây dựng kế hoạch truyền thông cho thương hiệu thời trang quy mô nhỏ.</li>
+                        <li>Lên nội dung, kịch bản và định hướng triển khai chiến dịch MXH.</li>
+                        <li>Phối hợp với team triển khai hoạt động truyền thông giai đoạn ra mắt.</li>
+                    </ul>
+
+                    <!-- Image Gallery cho ROW 3 -->
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/934070/pexels-photo-934070.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 1" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">FASHION_A</div>
+                        </div>
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 2" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">FASHION_B</div>
+                        </div>
+                        <div class="aspect-video border-4 border-raw-black bg-raw-paper relative overflow-hidden brutal-shadow hover:-translate-y-1 hover:translate-x-1 transition-transform">
+                            <img src="https://images.pexels.com/photos/837140/pexels-photo-837140.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Minh họa 3" class="absolute inset-0 w-full h-full object-cover grayscale contrast-150 mix-blend-multiply opacity-80 hover:scale-110 transition-transform duration-500">
+                            <div class="absolute top-0 left-0 bg-raw-black text-raw-paper text-xs font-mono font-bold px-2 py-1">FASHION_C</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KỸ NĂNG & HỌC VẤN (Grid Layout) -->
+        <section class="grid grid-cols-1 lg:grid-cols-2">
+            
+            <!-- SKILLS (Like a shipping box label) -->
+            <div class="border-b-4 lg:border-b-0 lg:border-r-4 border-raw-black p-6 md:p-12 bg-white relative">
+                <!-- Decorative Graphic -->
+                <div class="absolute top-6 right-6 flex gap-1">
+                    <div class="w-4 h-12 bg-raw-black"></div>
+                    <div class="w-2 h-12 bg-raw-black"></div>
+                    <div class="w-6 h-12 bg-raw-black"></div>
+                    <div class="w-1 h-12 bg-raw-black"></div>
+                </div>
+
+                <h3 class="text-3xl font-black uppercase mb-8 border-2 border-raw-black inline-block px-4 py-2 brutal-shadow">Kỹ Năng</h3>
+                
+                <div class="space-y-8 font-mono">
+                    <div>
+                        <p class="font-bold border-b-2 border-raw-black inline-block mb-3">MARKETING</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-raw-black text-white text-sm uppercase">Kiến thức cơ bản</span>
+                            <span class="px-3 py-1 bg-raw-black text-white text-sm uppercase">Viết Content</span>
+                            <span class="px-3 py-1 bg-raw-black text-white text-sm uppercase">Lên chiến lược</span>
+                            <span class="px-3 py-1 bg-raw-black text-white text-sm uppercase">Kịch bản & Ý tưởng</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-bold border-b-2 border-raw-black inline-block mb-3">TOOLS</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 border-2 border-raw-black text-sm uppercase font-bold hover:bg-raw-orange transition-colors">Canva</span>
+                            <span class="px-3 py-1 border-2 border-raw-black text-sm uppercase font-bold hover:bg-raw-orange transition-colors">Capcut</span>
+                            <span class="px-3 py-1 border-2 border-raw-black text-sm uppercase font-bold hover:bg-raw-orange transition-colors">Excel</span>
+                            <span class="px-3 py-1 border-2 border-raw-black text-sm uppercase font-bold hover:bg-raw-orange transition-colors">Word</span>
+                            <span class="px-3 py-1 border-2 border-raw-black text-sm uppercase font-bold hover:bg-raw-orange transition-colors">PowerPoint</span>
+                        </div>
+                    </div>
+                    <div>
+                        <p class="font-bold border-b-2 border-raw-black inline-block mb-3">LANGUAGE</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-raw-orange text-raw-black font-bold text-sm uppercase brutal-shadow">Tiếng Anh (Thành thạo)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- EDUCATION -->
+            <div class="p-6 md:p-12 bg-raw-paper flex flex-col justify-center">
+                <h3 class="text-3xl font-black uppercase mb-8 flex items-center gap-2">
+                    <i data-lucide="book" class="w-8 h-8"></i>
+                    Học Vấn
+                </h3>
+                
+                <div class="border-4 border-raw-black p-8 brutal-shadow bg-white hover:-translate-y-2 hover:translate-x-2 hover:shadow-[0px_0px_0px_#111111] transition-all">
+                    <h4 class="text-2xl font-bold uppercase mb-2">Trường Quản trị và Kinh doanh</h4>
+                    <p class="font-mono text-raw-orange font-bold text-lg mb-6">Đại học Quốc gia Hà Nội</p>
+                    
+                    <div class="font-mono space-y-3 text-sm">
+                        <div class="flex justify-between border-b-2 border-dotted border-raw-black pb-1">
+                            <span class="font-bold">NGÀNH:</span>
+                            <span class="text-right">Marketing & Truyền Thông</span>
+                        </div>
+                        <div class="flex justify-between border-b-2 border-dotted border-raw-black pb-1">
+                            <span class="font-bold">STATUS:</span>
+                            <span class="text-right">Sinh viên năm 4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="bg-raw-black text-white border-t-4 border-raw-black p-6 md:p-12 flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="font-black text-4xl tracking-tighter">
+                HIỀN<span class="text-raw-orange">.</span>
+            </div>
+            <div class="font-mono text-sm text-center md:text-right uppercase">
+                <p>Designed with Visual Honesty & Retro Aesthetics.</p>
+                <p class="text-raw-orange mt-1">© 2026 // NO BACKUP PLANS.</p>
+            </div>
+        </footer>
+
+    </main>
+
+    <script>
+        // Init Lucide Icons
+        lucide.createIcons();
+    </script>
+</body>
+</html>
